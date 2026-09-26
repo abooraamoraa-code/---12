@@ -1,0 +1,1896 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOVA STORE | المتجر الإلكتروني</title>
+
+    <meta name="description" content="NOVA STORE - متجر إلكتروني حديث للمنتجات والخدمات">
+    <meta name="theme-color" content="#111827">
+
+    <!-- الملف الثالث لاحقاً -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- أيقونات -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- =========================================================
+     شريط التنبيه
+========================================================= -->
+
+<div class="top-notice" id="topNotice">
+    <div class="container notice-inner">
+        <span>🚚 توصيل الطلبات متاح حسب منطقتك</span>
+        <button type="button" onclick="closeNotice()">×</button>
+    </div>
+</div>
+
+
+<!-- =========================================================
+     رأس الموقع
+========================================================= -->
+
+<header class="main-header" id="mainHeader">
+
+    <div class="container header-inner">
+
+        <!-- الشعار -->
+        <a href="#home" class="logo" aria-label="NOVA STORE">
+            <span class="logo-icon">N</span>
+            <span class="logo-text">
+                <strong>NOVA</strong>
+                <small>STORE</small>
+            </span>
+        </a>
+
+
+        <!-- البحث -->
+        <div class="header-search">
+
+            <form id="searchForm">
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="ابحث عن منتج..."
+                    autocomplete="off"
+                >
+
+                <button type="submit" aria-label="بحث">
+                    🔎
+                </button>
+
+            </form>
+
+            <div class="search-results" id="searchResults"></div>
+
+        </div>
+
+
+        <!-- أزرار الرأس -->
+        <div class="header-actions">
+
+            <button
+                type="button"
+                class="header-action"
+                onclick="openMessages()"
+            >
+                <span>💬</span>
+                <small>تواصل معنا</small>
+            </button>
+
+            <button
+                type="button"
+                class="header-action cart-button"
+                onclick="openCart()"
+            >
+                <span>🛒</span>
+                <small>الطلبات</small>
+                <b id="cartCount">0</b>
+            </button>
+
+            <button
+                type="button"
+                class="mobile-menu-button"
+                onclick="toggleMobileMenu()"
+            >
+                ☰
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- القائمة -->
+    <nav class="main-nav">
+
+        <div class="container nav-inner">
+
+            <a href="#home" class="nav-link active">
+                الرئيسية
+            </a>
+
+            <a href="#products" class="nav-link">
+                المنتجات
+            </a>
+
+            <a href="#categories" class="nav-link">
+                التصنيفات
+            </a>
+
+            <a href="#offers" class="nav-link">
+                العروض
+            </a>
+
+            <a href="#about" class="nav-link">
+                من نحن
+            </a>
+
+            <a href="#contact" class="nav-link">
+                تواصل معنا
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================================================
+     القائمة للموبايل
+========================================================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <div class="mobile-menu-header">
+        <strong>NOVA STORE</strong>
+
+        <button
+            type="button"
+            onclick="toggleMobileMenu()"
+        >
+            ×
+        </button>
+    </div>
+
+    <div class="mobile-menu-links">
+
+        <a href="#home" onclick="toggleMobileMenu()">
+            🏠 الرئيسية
+        </a>
+
+        <a href="#products" onclick="toggleMobileMenu()">
+            🛍️ المنتجات
+        </a>
+
+        <a href="#categories" onclick="toggleMobileMenu()">
+            🗂️ التصنيفات
+        </a>
+
+        <a href="#offers" onclick="toggleMobileMenu()">
+            🔥 العروض
+        </a>
+
+        <a href="#about" onclick="toggleMobileMenu()">
+            ℹ️ من نحن
+        </a>
+
+        <a href="#contact" onclick="toggleMobileMenu()">
+            📞 تواصل معنا
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     الصفحة الرئيسية
+========================================================= -->
+
+<main id="home">
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero-section">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                ✨ أهلاً بك في NOVA STORE
+            </span>
+
+            <h1>
+                كل ما تبحث عنه
+                <span>في مكان واحد</span>
+            </h1>
+
+            <p>
+                اكتشف مجموعة واسعة من المنتجات والعروض
+                واطلب منتجاتك بسهولة وسرعة.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#products" class="primary-button">
+                    🛍️ تصفح المنتجات
+                </a>
+
+                <a href="#offers" class="secondary-button">
+                    🔥 شاهد العروض
+                </a>
+
+            </div>
+
+            <div class="hero-features">
+
+                <div>
+                    <span>🚚</span>
+                    <strong>طلبات سهلة</strong>
+                    <small>اطلب خلال دقائق</small>
+                </div>
+
+                <div>
+                    <span>💰</span>
+                    <strong>أسعار بالشيكل</strong>
+                    <small>أسعار واضحة</small>
+                </div>
+
+                <div>
+                    <span>💬</span>
+                    <strong>تواصل مباشر</strong>
+                    <small>راسل المتجر</small>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="hero-card hero-card-main">
+
+                <div class="hero-card-image">
+                    🛍️
+                </div>
+
+                <div class="hero-card-info">
+
+                    <span>منتجات مميزة</span>
+
+                    <strong>
+                        اكتشف مجموعتنا
+                    </strong>
+
+                    <small>
+                        يتم تحديث المنتجات باستمرار
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="floating-card floating-card-one">
+                ⭐ تقييمات العملاء
+                <strong>ممتازة</strong>
+            </div>
+
+
+            <div class="floating-card floating-card-two">
+                🔥 عروض جديدة
+                <strong>كل فترة</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     شريط الإحصائيات
+========================================================= -->
+
+<section class="stats-section">
+
+    <div class="container stats-grid">
+
+        <div class="stat-item">
+            <span>🛍️</span>
+            <strong id="statProducts">0+</strong>
+            <small>منتجات</small>
+        </div>
+
+        <div class="stat-item">
+            <span>📦</span>
+            <strong>24/7</strong>
+            <small>استقبال الطلبات</small>
+        </div>
+
+        <div class="stat-item">
+            <span>💬</span>
+            <strong>مباشر</strong>
+            <small>التواصل مع المتجر</small>
+        </div>
+
+        <div class="stat-item">
+            <span>💰</span>
+            <strong>₪</strong>
+            <small>العملة المستخدمة</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     التصنيفات
+========================================================= -->
+
+<section class="categories-section" id="categories">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="section-label">
+                    تصفح المتجر
+                </span>
+
+                <h2>
+                    التصنيفات
+                </h2>
+            </div>
+
+            <p>
+                اختر القسم الذي تريد تصفحه
+            </p>
+
+        </div>
+
+
+        <div class="categories-grid">
+
+            <button
+                class="category-card active"
+                data-category="all"
+                onclick="filterCategory('all')"
+            >
+
+                <span class="category-icon">
+                    🛍️
+                </span>
+
+                <strong>
+                    جميع المنتجات
+                </strong>
+
+                <small>
+                    عرض الكل
+                </small>
+
+            </button>
+
+
+            <button
+                class="category-card"
+                data-category="electronics"
+                onclick="filterCategory('electronics')"
+            >
+
+                <span class="category-icon">
+                    💻
+                </span>
+
+                <strong>
+                    إلكترونيات
+                </strong>
+
+                <small>
+                    أجهزة وتقنيات
+                </small>
+
+            </button>
+
+
+            <button
+                class="category-card"
+                data-category="clothes"
+                onclick="filterCategory('clothes')"
+            >
+
+                <span class="category-icon">
+                    👕
+                </span>
+
+                <strong>
+                    ملابس
+                </strong>
+
+                <small>
+                    أزياء وملابس
+                </small>
+
+            </button>
+
+
+            <button
+                class="category-card"
+                data-category="home"
+                onclick="filterCategory('home')"
+            >
+
+                <span class="category-icon">
+                    🏠
+                </span>
+
+                <strong>
+                    المنزل
+                </strong>
+
+                <small>
+                    منتجات منزلية
+                </small>
+
+            </button>
+
+
+            <button
+                class="category-card"
+                data-category="accessories"
+                onclick="filterCategory('accessories')"
+            >
+
+                <span class="category-icon">
+                    🎧
+                </span>
+
+                <strong>
+                    إكسسوارات
+                </strong>
+
+                <small>
+                    إكسسوارات متنوعة
+                </small>
+
+            </button>
+
+
+            <button
+                class="category-card"
+                data-category="other"
+                onclick="filterCategory('other')"
+            >
+
+                <span class="category-icon">
+                    ✨
+                </span>
+
+                <strong>
+                    أخرى
+                </strong>
+
+                <small>
+                    منتجات متنوعة
+                </small>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     المنتجات
+========================================================= -->
+
+<section class="products-section" id="products">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    متجر NOVA
+                </span>
+
+                <h2>
+                    أحدث المنتجات
+                </h2>
+
+            </div>
+
+            <div class="products-controls">
+
+                <select
+                    id="sortProducts"
+                    onchange="sortProducts()"
+                >
+
+                    <option value="default">
+                        الترتيب الافتراضي
+                    </option>
+
+                    <option value="price-low">
+                        السعر: من الأقل للأعلى
+                    </option>
+
+                    <option value="price-high">
+                        السعر: من الأعلى للأقل
+                    </option>
+
+                    <option value="newest">
+                        الأحدث
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- شريط الفلترة -->
+
+        <div class="filter-bar">
+
+            <button
+                class="filter-button active"
+                onclick="filterCategory('all')"
+            >
+                الكل
+            </button>
+
+            <button
+                class="filter-button"
+                onclick="filterCategory('electronics')"
+            >
+                إلكترونيات
+            </button>
+
+            <button
+                class="filter-button"
+                onclick="filterCategory('clothes')"
+            >
+                ملابس
+            </button>
+
+            <button
+                class="filter-button"
+                onclick="filterCategory('home')"
+            >
+                المنزل
+            </button>
+
+            <button
+                class="filter-button"
+                onclick="filterCategory('accessories')"
+            >
+                إكسسوارات
+            </button>
+
+        </div>
+
+
+        <!-- المنتجات ستأتي من Supabase -->
+
+        <div
+            class="products-grid"
+            id="productsGrid"
+        >
+
+            <!-- بطاقة تجريبية -->
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    <span class="product-badge">
+                        جديد
+                    </span>
+
+                    <div class="placeholder-image">
+                        🛍️
+                    </div>
+
+                    <button
+                        class="favorite-button"
+                        type="button"
+                        aria-label="إضافة للمفضلة"
+                    >
+                        ♡
+                    </button>
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <small class="product-category">
+                        منتجات المتجر
+                    </small>
+
+                    <h3>
+                        سيتم تحميل المنتجات من قاعدة البيانات
+                    </h3>
+
+                    <p class="product-description">
+                        بعد ربط Supabase ستظهر المنتجات
+                        التي تضيفها الإدارة هنا تلقائيًا.
+                    </p>
+
+                    <div class="product-bottom">
+
+                        <div class="product-price">
+                            <strong>
+                                ₪0
+                            </strong>
+
+                            <small>
+                                السعر
+                            </small>
+                        </div>
+
+                        <button
+                            class="order-button"
+                            type="button"
+                            onclick="showDemoMessage()"
+                        >
+                            اطلب الآن
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- عدم وجود منتجات -->
+
+        <div
+            class="empty-products"
+            id="emptyProducts"
+            hidden
+        >
+
+            <div>
+                🛍️
+            </div>
+
+            <h3>
+                لا توجد منتجات
+            </h3>
+
+            <p>
+                لم نجد منتجات مطابقة لبحثك.
+            </p>
+
+            <button
+                type="button"
+                onclick="filterCategory('all')"
+            >
+                عرض جميع المنتجات
+            </button>
+
+        </div>
+
+
+        <!-- تحميل -->
+
+        <div
+            class="products-loading"
+            id="productsLoading"
+            hidden
+        >
+
+            <div class="loading-spinner"></div>
+
+            <p>
+                جارٍ تحميل المنتجات...
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     قسم العروض
+========================================================= -->
+
+<section class="offers-section" id="offers">
+
+    <div class="container">
+
+        <div class="offer-banner">
+
+            <div class="offer-content">
+
+                <span>
+                    🔥 عروض NOVA STORE
+                </span>
+
+                <h2>
+                    اكتشف المنتجات والعروض الجديدة
+                </h2>
+
+                <p>
+                    تابع المتجر باستمرار لمعرفة المنتجات
+                    التي تتم إضافتها والعروض المتوفرة.
+                </p>
+
+                <a
+                    href="#products"
+                    class="primary-button"
+                >
+                    مشاهدة المنتجات
+                </a>
+
+            </div>
+
+
+            <div class="offer-visual">
+                🎁
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     لماذا نحن
+========================================================= -->
+
+<section class="features-section">
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="section-label">
+                NOVA STORE
+            </span>
+
+            <h2>
+                تجربة شراء بسيطة
+            </h2>
+
+            <p>
+                صممنا المتجر ليكون واضحًا وسهل الاستخدام.
+            </p>
+
+        </div>
+
+
+        <div class="features-grid">
+
+            <div class="feature-card">
+
+                <span class="feature-icon">
+                    🛍️
+                </span>
+
+                <h3>
+                    منتجات متنوعة
+                </h3>
+
+                <p>
+                    تصفح المنتجات المتوفرة في المتجر
+                    واختر ما يناسبك.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span class="feature-icon">
+                    💰
+                </span>
+
+                <h3>
+                    أسعار واضحة
+                </h3>
+
+                <p>
+                    تظهر أسعار المنتجات بالشيكل
+                    بشكل واضح قبل إرسال الطلب.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span class="feature-icon">
+                    📦
+                </span>
+
+                <h3>
+                    إرسال الطلب
+                </h3>
+
+                <p>
+                    يمكنك إرسال بيانات طلب المنتج
+                    بسهولة من صفحة الطلب.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span class="feature-icon">
+                    💬
+                </span>
+
+                <h3>
+                    التواصل
+                </h3>
+
+                <p>
+                    يمكنك التواصل مع إدارة المتجر
+                    ومتابعة الردود.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     من نحن
+========================================================= -->
+
+<section class="about-section" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-visual">
+
+            <div class="about-logo">
+                N
+            </div>
+
+            <span>
+                NOVA STORE
+            </span>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <span class="section-label">
+                من نحن
+            </span>
+
+            <h2>
+                أهلاً بك في NOVA STORE
+            </h2>
+
+            <p>
+                NOVA STORE هو متجر إلكتروني يهدف إلى توفير
+                تجربة بسيطة وسهلة لاستعراض المنتجات وإرسال
+                الطلبات والتواصل مع المتجر.
+            </p>
+
+            <p>
+                يتم تحديث المنتجات وإدارتها من لوحة الإدارة،
+                بينما تظهر المنتجات المتاحة للعملاء بصورة
+                منظمة داخل المتجر.
+            </p>
+
+
+            <div class="about-points">
+
+                <div>
+                    <span>✓</span>
+                    <strong>واجهة سهلة الاستخدام</strong>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <strong>أسعار بالشيكل</strong>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <strong>طلبات منظمة</strong>
+                </div>
+
+                <div>
+                    <span>✓</span>
+                    <strong>تواصل مع الإدارة</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     خطوات الطلب
+========================================================= -->
+
+<section class="steps-section">
+
+    <div class="container">
+
+        <div class="section-heading centered">
+
+            <span class="section-label">
+                كيف تطلب؟
+            </span>
+
+            <h2>
+                ثلاث خطوات فقط
+            </h2>
+
+        </div>
+
+
+        <div class="steps-grid">
+
+            <div class="step-card">
+
+                <span class="step-number">
+                    01
+                </span>
+
+                <div class="step-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    اختر المنتج
+                </h3>
+
+                <p>
+                    تصفح المنتجات واختر المنتج
+                    الذي تريد طلبه.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <span class="step-number">
+                    02
+                </span>
+
+                <div class="step-icon">
+                    📝
+                </div>
+
+                <h3>
+                    أرسل الطلب
+                </h3>
+
+                <p>
+                    أدخل بياناتك المطلوبة ثم
+                    أرسل الطلب إلى المتجر.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <span class="step-number">
+                    03
+                </span>
+
+                <div class="step-icon">
+                    💬
+                </div>
+
+                <h3>
+                    تواصل مع المتجر
+                </h3>
+
+                <p>
+                    يمكن التواصل مع الإدارة
+                    بخصوص الطلب.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     التواصل
+========================================================= -->
+
+<section class="contact-section" id="contact">
+
+    <div class="container contact-grid">
+
+        <div class="contact-info">
+
+            <span class="section-label">
+                تواصل معنا
+            </span>
+
+            <h2>
+                هل لديك سؤال؟
+            </h2>
+
+            <p>
+                أرسل رسالة إلى المتجر وسيتم استقبالها
+                في لوحة الإدارة.
+            </p>
+
+
+            <div class="contact-methods">
+
+                <div class="contact-method">
+
+                    <span>
+                        💬
+                    </span>
+
+                    <div>
+                        <strong>
+                            المراسلة
+                        </strong>
+
+                        <small>
+                            أرسل رسالة مباشرة للمتجر
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-method">
+
+                    <span>
+                        📦
+                    </span>
+
+                    <div>
+                        <strong>
+                            متابعة الطلب
+                        </strong>
+
+                        <small>
+                            اسأل عن حالة طلبك
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-method">
+
+                    <span>
+                        🕐
+                    </span>
+
+                    <div>
+                        <strong>
+                            استقبال الطلبات
+                        </strong>
+
+                        <small>
+                            يمكنك إرسال الطلب في أي وقت
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-form-card">
+
+            <form id="contactForm">
+
+                <div class="form-group">
+
+                    <label for="contactName">
+                        الاسم
+                    </label>
+
+                    <input
+                        id="contactName"
+                        name="name"
+                        type="text"
+                        placeholder="اكتب اسمك"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="contactPhone">
+                        رقم الهاتف
+                    </label>
+
+                    <input
+                        id="contactPhone"
+                        name="phone"
+                        type="tel"
+                        placeholder="اكتب رقم الهاتف"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="contactMessage">
+                        الرسالة
+                    </label>
+
+                    <textarea
+                        id="contactMessage"
+                        name="message"
+                        rows="6"
+                        placeholder="اكتب رسالتك هنا..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-button full-button"
+                >
+                    إرسال الرسالة
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================================================
+     تذييل الموقع
+========================================================= -->
+
+<footer class="main-footer">
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-brand">
+
+            <div class="logo">
+
+                <span class="logo-icon">
+                    N
+                </span>
+
+                <span class="logo-text">
+
+                    <strong>
+                        NOVA
+                    </strong>
+
+                    <small>
+                        STORE
+                    </small>
+
+                </span>
+
+            </div>
+
+            <p>
+                متجر إلكتروني بسيط وسهل لاستعراض
+                المنتجات وإرسال الطلبات.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                المتجر
+            </h3>
+
+            <a href="#products">
+                المنتجات
+            </a>
+
+            <a href="#categories">
+                التصنيفات
+            </a>
+
+            <a href="#offers">
+                العروض
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                معلومات
+            </h3>
+
+            <a href="#about">
+                من نحن
+            </a>
+
+            <a href="#contact">
+                تواصل معنا
+            </a>
+
+            <a href="#">
+                سياسة الخصوصية
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                العملة
+            </h3>
+
+            <span>
+                ₪ الشيكل
+            </span>
+
+            <span>
+                الأسعار تظهر بالشيكل
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+        <span>
+            © <span id="currentYear"></span> NOVA STORE
+        </span>
+
+        <span>
+            جميع الحقوق محفوظة
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     نافذة الطلب
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="orderModal"
+    hidden
+>
+
+    <div class="modal-box">
+
+        <button
+            type="button"
+            class="modal-close"
+            onclick="closeModal('orderModal')"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-header">
+
+            <span class="modal-icon">
+                📦
+            </span>
+
+            <h2>
+                طلب المنتج
+            </h2>
+
+            <p>
+                أدخل بياناتك لإرسال الطلب
+            </p>
+
+        </div>
+
+
+        <form id="orderForm">
+
+            <input
+                type="hidden"
+                id="orderProductId"
+            >
+
+
+            <div class="selected-product" id="selectedProduct">
+
+                <div class="selected-product-image">
+                    🛍️
+                </div>
+
+                <div>
+
+                    <strong id="selectedProductName">
+                        المنتج
+                    </strong>
+
+                    <span id="selectedProductPrice">
+                        ₪0
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="orderName">
+                        الاسم *
+                    </label>
+
+                    <input
+                        id="orderName"
+                        type="text"
+                        required
+                        placeholder="الاسم"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="orderPhone">
+                        الهاتف *
+                    </label>
+
+                    <input
+                        id="orderPhone"
+                        type="tel"
+                        required
+                        placeholder="رقم الهاتف"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="orderAddress">
+                    العنوان
+                </label>
+
+                <input
+                    id="orderAddress"
+                    type="text"
+                    placeholder="المدينة / المنطقة"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="orderQuantity">
+                    الكمية
+                </label>
+
+                <input
+                    id="orderQuantity"
+                    type="number"
+                    min="1"
+                    value="1"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="orderNotes">
+                    ملاحظات
+                </label>
+
+                <textarea
+                    id="orderNotes"
+                    rows="4"
+                    placeholder="أي ملاحظات إضافية..."
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button full-button"
+            >
+                إرسال الطلب
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     نافذة الرسائل
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="messageModal"
+    hidden
+>
+
+    <div class="modal-box">
+
+        <button
+            type="button"
+            class="modal-close"
+            onclick="closeModal('messageModal')"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-header">
+
+            <span class="modal-icon">
+                💬
+            </span>
+
+            <h2>
+                تواصل معنا
+            </h2>
+
+            <p>
+                أرسل رسالتك إلى إدارة المتجر
+            </p>
+
+        </div>
+
+
+        <form id="messageForm">
+
+            <div class="form-group">
+
+                <label for="messageName">
+                    الاسم
+                </label>
+
+                <input
+                    id="messageName"
+                    type="text"
+                    required
+                    placeholder="اكتب اسمك"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="messagePhone">
+                    رقم الهاتف
+                </label>
+
+                <input
+                    id="messagePhone"
+                    type="tel"
+                    placeholder="رقم الهاتف"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="messageText">
+                    الرسالة
+                </label>
+
+                <textarea
+                    id="messageText"
+                    rows="6"
+                    required
+                    placeholder="اكتب رسالتك..."
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button full-button"
+            >
+                إرسال الرسالة
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     نافذة الطلبات
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="cartModal"
+    hidden
+>
+
+    <div class="modal-box cart-modal">
+
+        <button
+            type="button"
+            class="modal-close"
+            onclick="closeModal('cartModal')"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-header">
+
+            <span class="modal-icon">
+                🛒
+            </span>
+
+            <h2>
+                طلباتي
+            </h2>
+
+            <p>
+                المنتجات التي اخترتها
+            </p>
+
+        </div>
+
+
+        <div
+            class="cart-content"
+            id="cartContent"
+        >
+
+            <div class="empty-cart">
+
+                <span>
+                    🛒
+                </span>
+
+                <h3>
+                    لا توجد طلبات
+                </h3>
+
+                <p>
+                    لم تقم بإضافة أي منتج بعد.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     إشعارات
+========================================================= -->
+
+<div
+    class="toast-container"
+    id="toastContainer"
+></div>
+
+
+<!-- =========================================================
+     زر العودة للأعلى
+========================================================= -->
+
+<button
+    type="button"
+    class="back-to-top"
+    id="backToTop"
+    onclick="scrollToTop()"
+>
+    ↑
+</button>
+
+
+<!-- =========================================================
+     JavaScript
+========================================================= -->
+
+<script src="app.js"></script>
+
+
+<script>
+/*
+=========================================================
+الوظائف الأساسية المؤقتة
+=========================================================
+سيتم نقل الوظائف الكاملة لاحقاً إلى app.js
+=========================================================
+*/
+
+function closeNotice() {
+
+    const notice = document.getElementById("topNotice");
+
+    if (notice) {
+        notice.style.display = "none";
+    }
+
+}
+
+
+function toggleMobileMenu() {
+
+    const menu = document.getElementById("mobileMenu");
+
+    if (!menu) return;
+
+    menu.classList.toggle("open");
+
+}
+
+
+function openModal(id) {
+
+    const modal = document.getElementById(id);
+
+    if (!modal) return;
+
+    modal.hidden = false;
+
+    document.body.classList.add("modal-open");
+
+}
+
+
+function closeModal(id) {
+
+    const modal = document.getElementById(id);
+
+    if (!modal) return;
+
+    modal.hidden = true;
+
+    document.body.classList.remove("modal-open");
+
+}
+
+
+function openMessages() {
+
+    openModal("messageModal");
+
+}
+
+
+function openCart() {
+
+    openModal("cartModal");
+
+}
+
+
+function showDemoMessage() {
+
+    alert(
+        "سيتم تفعيل الطلبات الحقيقية بعد ربط المتجر بقاعدة Supabase."
+    );
+
+}
+
+
+function scrollToTop() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+function filterCategory(category) {
+
+    console.log("Category:", category);
+
+}
+
+
+function sortProducts() {
+
+    const value =
+        document.getElementById("sortProducts")?.value;
+
+    console.log("Sort:", value);
+
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const year =
+        document.getElementById("currentYear");
+
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
+
+    const searchForm =
+        document.getElementById("searchForm");
+
+    if (searchForm) {
+
+        searchForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                const value =
+                    document.getElementById(
+                        "searchInput"
+                    ).value.trim();
+
+                if (value) {
+                    console.log(
+                        "Search:",
+                        value
+                    );
+                }
+
+            }
+        );
+
+    }
+
+
+    const backToTop =
+        document.getElementById("backToTop");
+
+
+    window.addEventListener(
+        "scroll",
+        function () {
+
+            if (!backToTop) return;
+
+            if (window.scrollY > 500) {
+
+                backToTop.classList.add("show");
+
+            } else {
+
+                backToTop.classList.remove("show");
+
+            }
+
+        }
+    );
+
+});
+
+
+/*
+=========================================================
+ملاحظة مهمة
+=========================================================
+
+هذا الملف هو الواجهة الرئيسية فقط.
+
+في الخطوات التالية:
+
+style.css
+---------
+سيحتوي على التصميم الكامل.
+
+app.js
+------
+سيحتوي على:
+- قراءة المنتجات من Supabase
+- البحث
+- الفلترة
+- الطلبات
+- الرسائل
+- التخزين
+- التحديث المباشر
+
+admin.html
+----------
+لوحة الإدارة.
+
+admin.js
+--------
+إدارة المنتجات والطلبات والرسائل
+وتسجيل دخول الإدارة.
+
+=========================================================
+*/
+</script>
+
+</body>
+</html>
+```
